@@ -32,6 +32,10 @@ $  ./k8s-config/workshop/create_user admin
 
 * Patch Ingress adress
 
+```bash
+kubectl -n workshop get Ingress admin-1-ingress -o json | jq '.spec.rules[0].host = "user-1.<adress>' | kubectl apply -f - -n workshop
+```
+
 * Add default content to volume
 
 ```bash
@@ -44,5 +48,8 @@ $ kubectl -n workshop get Ingress admin-ingress -o jsonpath="{.spec.rules[0].hos
 ```
 
 ## Create N users
+
+```bash
+$ N=5 ./create_users.sh  $N
 
 ## Delete users
