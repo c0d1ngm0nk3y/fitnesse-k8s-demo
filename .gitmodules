@@ -1,0 +1,6 @@
+[submodule "k8s-config"]
+	path = k8s-config
+	url = git@github.com:c0d1ngm0nk3y/k8s-config.git
+[submodule "sample-application-go"]
+	path = sample-application-go
+	url = git@github.com:c0d1ngm0nk3y/sample-application-go.git
