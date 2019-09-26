@@ -6,11 +6,11 @@ How to setup the  demo
 
 ## Install sample application to test
 
-* Install samole app
+* Install simple app
 
 ```bash
-$ kubectl  apply -n workshop -f ./k8s-config/workshop/sample-app.yaml
-$ kubectl  apply -n workshop -f ./k8s-config/workshop/sample-app-v1.yaml
+$ kubectl  apply -n workshop -f ./k8s-config/workshop/simple-app.yaml
+$ kubectl  apply -n workshop -f ./k8s-config/workshop/simple-app-v1.yaml
 $ kubectl  apply -n workshop -f ./k8s-config/workshop/client.yaml
 ```
 
@@ -18,7 +18,7 @@ $ kubectl  apply -n workshop -f ./k8s-config/workshop/client.yaml
 * Verify
 
 ```
-$ ./k8s-config/workshop/ping-sample-app-service
+$ ./k8s-config/workshop/ping-simple-app-service
 ```
 
 
@@ -33,7 +33,7 @@ $  ./k8s-config/workshop/create_user admin
 * Patch Ingress adress
 
 ```bash
-kubectl -n workshop get Ingress admin-1-ingress -o json | jq '.spec.rules[0].host = "user-1.<adress>' | kubectl apply -f - -n workshop
+kubectl -n workshop get Ingress admin-ingress -o json | jq '.spec.rules[0].host = "admin.<adress>"' | kubectl apply -f - -n workshop
 ```
 
 * Add default content to volume
