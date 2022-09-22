@@ -49,6 +49,6 @@ kubectl -n workshop get Ingress admin-ingress -o jsonpath="{.spec.rules[0].host}
 ## Create N users
 
 ```bash
-N=5 ./create_users.sh  $N
+N=5 ./create_users.sh
 
 ## Delete users
