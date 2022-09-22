@@ -31,7 +31,7 @@ kubectl  apply -n workshop -f ./k8s-config/workshop/client.yaml
 * Patch Ingress adress
 
 ```bash
-kubectl -n workshop get Ingress admin-ingress -o json | jq '.spec.rules[0].host = "admin.<adress>"' | kubectl apply -f - -n workshop
+kubectl -n workshop get Ingress admin-ingress -o json | jq '.spec.rules[0].host = "admin.ingress.<adress>"' | kubectl apply -f - -n workshop
 ```
 
 * Add default content to volume
